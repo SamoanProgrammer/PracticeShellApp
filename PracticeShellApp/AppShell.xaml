@@ -5,6 +5,9 @@
        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
        mc:Ignorable="d"
        xmlns:local="clr-namespace:PracticeShellApp.Views"
+       
+       FlyoutHeaderBehavior="Default"
+       
        Title="PracticeShellApp"
        x:Class="PracticeShellApp.AppShell">
 
@@ -29,7 +32,8 @@
         </ResourceDictionary>
     </Shell.Resources>
 
-    <!-- Your Pages -->
+    <!-- Your Pages 
+    
     <TabBar>
         <Tab Title="Browse" Icon="tab_feed.png">
             <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
@@ -38,6 +42,68 @@
             <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
         </Tab>
     </TabBar>
+    
+    -->
+
+    <FlyoutItem Title="PracticeShellApp" Shell.TabBarIsVisible="True" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="About" ContentTemplate="{DataTemplate local:ItemsPage}" />
+    </FlyoutItem>
+    
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid BackgroundColor="{StaticResource NavigationPrimary}"
+              HeightRequest="50">
+                <Label Text="Practice"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="1"
+                       Text="Item 1"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" />
+                <Label Grid.Row="1" Grid.Column="1"
+                       Text="Item 2"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="1"
+                       Text="Menu 1"
+                       TextColor="Black"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" />
+                <Label Grid.Row="1" Grid.Column="1"
+                       Text="Menu 2"
+                       TextColor="Black"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
 
     <!-- Optional Templates 
     // These may be provided inline as below or as separate classes.
