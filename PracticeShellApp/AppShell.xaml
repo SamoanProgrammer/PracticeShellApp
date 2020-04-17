@@ -45,10 +45,42 @@
     
     -->
 
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="{StaticResource NavigationPrimary}"
+              HeightRequest="50">
+            <Label Text="Practice"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" />
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <!--
     <FlyoutItem Title="PracticeShellApp" Shell.TabBarIsVisible="True" FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent Title="About" ContentTemplate="{DataTemplate local:ItemsPage}" />
     </FlyoutItem>
+    -->
     
+    <FlyoutItem Title="Items P">
+        <Tab>
+            <ShellContent>
+                <local:ItemsPage />
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+    
+    <FlyoutItem Title="About P">
+        <Tab>
+            <ShellContent>
+                <local:AboutPage />
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+
+    <MenuItem Text="Menu 1" />
+
+    <!--
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>
             <Grid BackgroundColor="{StaticResource NavigationPrimary}"
@@ -62,6 +94,7 @@
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
 
+    
     <Shell.ItemTemplate>
         <DataTemplate>
             <Grid>
@@ -87,6 +120,9 @@
     <Shell.MenuItemTemplate>
         <DataTemplate>
             <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.5*" />
                     <ColumnDefinition Width="0.5*" />
@@ -104,7 +140,8 @@
             </Grid>
         </DataTemplate>
     </Shell.MenuItemTemplate>
-
+    -->
+    
     <!-- Optional Templates 
     // These may be provided inline as below or as separate classes.
 
